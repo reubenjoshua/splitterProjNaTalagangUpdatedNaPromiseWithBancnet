@@ -1,0 +1,492 @@
+.data-table-container {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.split-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.split-button:hover {
+  background-color: #45a049;
+}
+
+.split-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.search-box {
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.table-info {
+  color: #666;
+  font-size: 14px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: auto;
+}
+
+.data-table td {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Column-specific styles */
+.data-table .text {
+  min-width: 100px;
+  max-width: 200px;
+}
+
+.data-table .code {
+  min-width: 80px;
+  max-width: 120px;
+  font-family: monospace;
+  text-align: center;
+}
+
+.data-table .long-text {
+  min-width: 200px;
+  max-width: 400px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.data-table .date {
+  width: 100px;
+  text-align: center;
+}
+
+.data-table .time {
+  width: 80px;
+  text-align: center;
+}
+
+.data-table .account {
+  width: 150px;
+  font-family: monospace;
+  text-align: center;
+}
+
+.data-table .name {
+  width: 200px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.data-table .control {
+  width: 150px;
+  font-family: monospace;
+}
+
+.data-table .branch {
+  width: 150px;
+}
+
+.data-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+}
+
+.pagination button:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  color: #666;
+  font-size: 14px;
+}
+
+.payment-type-filter {
+  min-width: 200px;
+}
+
+.payment-type-select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.payment-type-select:hover {
+  border-color: #aaa;
+}
+
+.payment-type-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.total-amount {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.payment-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: #e9ecef;
+  color: #495057;
+}
+
+/* Payment type specific colors */
+.payment-badge.bayad-center { background: #007bff; color: white; }
+.payment-badge.bancnet { background: #28a745; color: white; }
+.payment-badge.bdo { background: #0056b3; color: white; }
+.payment-badge.ecpay { background: #6610f2; color: white; }
+.payment-badge.sm { background: #fd7e14; color: white; }
+.payment-badge.eprime { background: #20c997; color: white; }
+.payment-badge.lbc { background: #dc3545; color: white; }
+.payment-badge.metrobank { background: #6f42c1; color: white; }
+.payment-badge.cebuana { background: #17a2b8; color: white; }
+.payment-badge.primetap { background: #e83e8c; color: white; }
+.payment-badge.alleasy { background: #198754; color: white; }
+.payment-badge.pnb { background: #0dcaf0; color: white; }
+.payment-badge.unionbank { background: #6c757d; color: white; }
+.payment-badge.bdo-new { background: #0056b3; color: white; }
+.payment-badge.unknown { background: #6c757d; color: white; }
+
+@media (max-width: 768px) {
+  .table-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .data-table td {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .pagination button {
+    padding: 4px 8px;
+    font-size: 13px;
+  }
+}
+
+.payment-summary {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+.payment-summary h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.summary-table-wrapper {
+  overflow-x: auto;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.summary-table th {
+  background: #e9ecef;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+.summary-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+  color: #333;
+}
+
+.summary-table tr:last-child td {
+  border-bottom: none;
+}
+
+.summary-table .amount {
+  font-family: monospace;
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.summary-table .grand-total {
+  background: #e9ecef;
+  font-weight: 600;
+}
+
+.summary-table .grand-total td {
+  border-top: 2px solid #dee2e6;
+}
+
+.summary-section {
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-label {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.summary-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a5298;
+}
+
+.summary-value.amount {
+  font-family: monospace;
+}
+
+.summary-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.summary-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.summary-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.download-all-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.download-all-btn:hover {
+  background-color: #218838;
+}
+
+.summary-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.summary-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.summary-label {
+  display: block;
+  font-size: 0.9em;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.summary-value {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.atm-summary {
+  margin-top: 30px;
+}
+
+.atm-summary h4 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.atm-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.atm-summary-item {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.atm-ref-header {
+  background-color: #e9ecef;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.atm-ref {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.download-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
+.atm-details {
+  padding: 15px;
+}
+
+.atm-detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.atm-detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  color: #6c757d;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.dates-list {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #495057;
+} 
